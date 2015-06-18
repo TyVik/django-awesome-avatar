@@ -104,12 +104,14 @@ Django's ``settings.py``::
         'width': 100,
         'height': 100,
         
+        'upload_to' : 'avatars'
         'select_area_width': 400,
         'select_area_height': 300,
         
         'save_quality': 90,
         'save_format': 'png',
-        ...
+        'default_image' : '/static/img/no_avatar.png'
+        'table' : False
     }
      
 .. _django-avatar: https://github.com/jezdez/django-avatar
