@@ -18,3 +18,7 @@
     box-sizing: content-box;
     overflow: hidden;
 }
+
+.awesome-avatar-widget > div {
+    padding: 5px 0;
+}
