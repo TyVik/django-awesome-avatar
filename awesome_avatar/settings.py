@@ -13,6 +13,7 @@ class config(object):
     select_area_width = 400
     select_area_height = 250
     default_image = '/static/img/no_avatar.png'
+    table = False
 
 
 settings_config = getattr(settings, 'AWESOME_AVATAR', {})
