@@ -12,7 +12,7 @@ class config(object):
 
     select_area_width = 400
     select_area_height = 250
-    default_image = '/static/awesome_avatar/default.png'
+    default_image = '/static/img/no_avatar.png'
 
 
 settings_config = getattr(settings, 'AWESOME_AVATAR', {})
