@@ -39,10 +39,9 @@ class AvatarField(models.ImageField):
         return super(AvatarField, self).formfield(**defaults)
 
     def save_form_data(self, instance, data):
-        # if data and self.width and self.height:
-        file_ = data['file']
-        if file_:
 
+        if data and 'file' in data:
+            file_ = data['file']
             image = Image.open(StringIO(file_.read()))
             image = image.crop(data['box'])
             image = image.resize((self.width, self.height), Image.ANTIALIAS)
@@ -52,6 +51,8 @@ class AvatarField(models.ImageField):
 
             file_name = u'{}.{}'.format(os.path.splitext(file_.name)[0], config.save_format)
 
-            # new_data = SimpleUploadedFile(file.name, content.getvalue(), content_type='image/' + config.save_format)
             new_data = InMemoryUploadedFile(content, None, file_name, 'image/' + config.save_format, len(content.getvalue()), None)
-            super(AvatarField, self).save_form_data(instance, new_data)
+        else:
+            new_data = False
+
+        super(AvatarField, self).save_form_data(instance, new_data)
