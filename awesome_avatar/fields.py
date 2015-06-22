@@ -40,7 +40,7 @@ class AvatarField(models.ImageField):
 
     def save_form_data(self, instance, data):
 
-        if data and 'file' in data:
+        if data and hasattr(data,'file'):
             file_ = data['file']
             image = Image.open(StringIO(file_.read()))
             image = image.crop(data['box'])
