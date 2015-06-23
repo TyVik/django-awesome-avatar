@@ -40,7 +40,7 @@ class AvatarField(models.ImageField):
 
     def save_form_data(self, instance, data):
 
-        f type(data) is dict and 'file' in data:
+        if type(data) is dict and 'file' in data:
             file_ = data['file']
             if file_:
                 image = Image.open(StringIO(file_.read()))
