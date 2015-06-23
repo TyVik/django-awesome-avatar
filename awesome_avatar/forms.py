@@ -13,7 +13,7 @@ class AvatarField(forms.ImageField):
         super(AvatarField, self).__init__(**defaults)
 
     def to_python(self, data):
-        if hasattr(data,'file'):
+        if 'file' in data:
             super(AvatarField, self).to_python(data['file'])
         return data
 
