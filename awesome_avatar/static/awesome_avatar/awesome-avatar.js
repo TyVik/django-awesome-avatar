@@ -41,6 +41,7 @@ bind_preview = function(selector, config, e) {
 //    $(selector + '-preview').append('<img />');
     $(selector + '-preview img').show();
     $(selector + '-preview img').css('max-width', 'none');
+    $(selector + '-preview img').css('max-height', 'none');
     $(selector + '-preview img').attr('src', image_data);
 
     $(selector + '-select-area').empty();
