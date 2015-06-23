@@ -17,6 +17,7 @@
     border: 1px solid #ddd;
     box-sizing: content-box;
     overflow: hidden;
+    display: hidden;
 }
 
 .awesome-avatar-widget > div {
