@@ -40,19 +40,22 @@ class AvatarField(models.ImageField):
 
     def save_form_data(self, instance, data):
 
-        if data and hasattr(data,'file'):
+        f type(data) is dict and 'file' in data:
             file_ = data['file']
-            image = Image.open(StringIO(file_.read()))
-            image = image.crop(data['box'])
-            image = image.resize((self.width, self.height), Image.ANTIALIAS)
+            if file_:
+                image = Image.open(StringIO(file_.read()))
+                image = image.crop(data['box'])
+                image = image.resize((self.width, self.height), Image.ANTIALIAS)
 
-            content = StringIO()
-            image.save(content, config.save_format, quality=config.save_quality)
+                content = StringIO()
+                image.save(content, config.save_format, quality=config.save_quality)
 
-            file_name = u'{}.{}'.format(os.path.splitext(file_.name)[0], config.save_format)
+                file_name = u'{}.{}'.format(os.path.splitext(file_.name)[0], config.save_format)
 
-            new_data = InMemoryUploadedFile(content, None, file_name, 'image/' + config.save_format, len(content.getvalue()), None)
+                new_data = InMemoryUploadedFile(content, None, file_name, 'image/' + config.save_format, len(content.getvalue()), None)
+            else:
+                new_data = None
         else:
-            new_data = False
+            new_data = data
 
         super(AvatarField, self).save_form_data(instance, new_data)
