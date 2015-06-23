@@ -14,7 +14,7 @@ bind_on_change_input_file = function(selector, config) {
         }
 
         $(selector + '-select-area').empty();
-//        $(selector + '-select-area img').hide();
+        $(selector + '-select-area').show();
 //        $(selector + '-preview').empty();
         $(selector + '-preview img').hide();
 
