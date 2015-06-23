@@ -21,7 +21,7 @@
     {% endif %}
                 <div id="{{ id }}-preview" class="awesome-avatar-preview"
                         style="width:{{ config.width }}px;height:{{ config.height }}px">
-                    <img src="{{ avatar_url }}">
+                    <img src="{{ avatar_url }}" style="max-width:{{ config.width }}px; max-height:{{ config.height }}px;">
                 </div>
     {% if config.table %}
         </td>
