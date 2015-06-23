@@ -22,3 +22,7 @@
 .awesome-avatar-widget > div {
     padding: 5px 0;
 }
+
+.hidden { 
+    display:none;
+}
