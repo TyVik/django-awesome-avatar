@@ -14,13 +14,8 @@
 
 .awesome-avatar-preview {
     margin-right: 20px;
-    border: 1px solid #ddd;
     box-sizing: content-box;
     overflow: hidden;
-}
-
-.awesome-avatar-widget > div {
-    padding: 5px 0;
 }
 
 .hidden { 
