@@ -5,7 +5,7 @@ from django.db import models
 from awesome_avatar import forms
 
 try:
-    from cStringIO import StringIO
+    from io import StringIO
 except ImportError:
     from StringIO import StringIO
 
